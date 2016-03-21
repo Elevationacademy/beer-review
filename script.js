@@ -40,7 +40,6 @@ var updateBeers = function () {
 
  
   for (var i = 0; i < beers.length; i++) {
-    console.log(beers[i]);
     var name = beers[i].name;
     var category = beers[i].category;
     var rating = beers[i].rating;

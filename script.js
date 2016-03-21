@@ -19,12 +19,6 @@ $('.post-beer').on('click', function (e) {
   updateBeers();
 });
 
-$('.sort-beer').on('click', function (e) {
-  e.preventDefault();
-
-  sortBeers();
-});
-
 var addBeer = function (name, category, rating) {
   var beer = {
     name: name,
@@ -46,29 +40,6 @@ var updateBeers = function () {
 
     $('.beers').append('<p>' + name + ' - ' + category + ' - ' + rating + '</p>')
   }
-}
-
-var sortBeers = function () {
-
-  var len = beers.length;
-
-  for (var i = len - 1; i >= 0; i --) {
-    for (var j = 1 ; j <= i; j++) {
-      if (beers[j - 1].rating > beers[j].rating) {
-        var temp = beers[j - 1];
-        beers[j - 1] = beers[j];
-        beers[j] = temp;
-      }
-    }
-  }
-
-  if (sortDescending) {
-    beers.reverse();
-  }
-
-  sortDescending = !sortDescending;
-
-  updateBeers();
 }
 
 updateBeers();
